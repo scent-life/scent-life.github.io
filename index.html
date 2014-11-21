@@ -19,13 +19,35 @@
     <link rel="shortcut icon" href="./img/scent icon.png">
 
     <style type="text/css">
-        .cover {
+        body {
+            margin: 0;
+        }
+
+        .cover, .cover img {
             width: 100%;
             border: 0;
             display: block;
         }
-        body {
-            margin: 0;
+
+        .cover img {
+            display: none;
+        }
+
+        .cover .desktop {
+            display: block;
+        }
+
+        .cover .mobile {
+            display: none;;
+        }
+
+        @media (max-width: 767px) {
+            .cover .desktop {
+                display: none;
+            }
+            .cover .mobile {
+                display: block;
+            }
         }
         .social-wrapper {
             margin-top: -40px;
@@ -44,8 +66,9 @@
 </head>
 
 <body>
-    <a class="cover" title="Scent Video" href="https://vimeo.com/112172987">
-        <img class="cover" src="./img/cover.jpg" alt="Coming Soon">
+    <a class="cover" title="Scent Video" href="//vimeo.com/112172987">
+        <img class="desktop" src="./img/cover.jpg" alt="Coming Soon">
+        <img class="mobile" src="./img/mobile-cover.jpg" alt="Coming Soon">
     </a>
 
     <div class="social-wrapper">
