@@ -158,12 +158,14 @@
     <script>
         $.ajax({
             url: 'http://api.facebook.com/restserver.php',
-            timeout: 500
+            timeout: 1000
         }).fail(function() {
             /* if user is in China, then polyfill to youku */
             $('#video_frame').attr('src', 'http://player.youku.com/embed/XODM0MjQyNDU2');
+            //alert('china!!');
         }).done(function() {
             /* user is in China */
+            //alert('free!!');
         });
     </script>
     <script>
