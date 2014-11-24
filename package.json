@@ -1,0 +1,21 @@
+{
+  "name": "scent",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Scent - Offical Page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:scent-life/scent-life.github.io.git"
+  },
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-less": "*",
+    "gulp-livereload": "*"
+  },
+  "author": "Scent Team",
+  "homepage": "http://scent.life"
+}
