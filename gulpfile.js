@@ -7,7 +7,9 @@ var homePath  = './',
 
 gulp.task('less', function() {
     return gulp.src(stylePath + '/*.less')
-        .pipe(less())
+        .pipe(less({
+            compress: true
+        }))
         .pipe(gulp.dest(stylePath));
 });
 
