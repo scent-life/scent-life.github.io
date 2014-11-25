@@ -84,6 +84,14 @@
         });
     }
 
+    function renderChinaImg() {
+        $('.i18n-img').each(function() {
+            var $dom = $(this),
+                imgSrc = $dom.data('src-zh-cn');
+            $dom.attr('src', imgSrc);
+        });
+    }
+
     function setupChinaVideo() {
         var $video = $('#video');
 
@@ -93,6 +101,7 @@
     function initChina() {
         addChinaClass();
         renderChinaText();
+        renderChinaImg();
         setupChinaVideo();
     }
 
