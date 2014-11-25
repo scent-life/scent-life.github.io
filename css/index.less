@@ -186,10 +186,56 @@ img {
     .border-radius(7px);
 }
 
+.box {
+    /*非IE的主流浏览器识别的垂直居中的方法*/
+    display: table-cell;
+    vertical-align:middle;
+
+    /*设置水平居中*/
+    text-align:center;
+
+    /* 针对IE的Hack */
+    *display: block;
+    *font-size: 175px;/*约为高度的0.873，200*0.873 约为175*/
+    *font-family:Arial;/*防止非utf-8引起的hack失效问题，如gbk编码*/
+
+    width:200px;
+    height:200px;
+    border: 1px solid #eee;
+}
+.box img {
+    /*设置图片垂直居中*/
+    vertical-align:middle;
+}
+
+.share-btns {
+    display: table-cell;
+    vertical-align:middle;
+    /* 针对IE的Hack */
+    *display: block;
+    *font-size: 32px;
+
+    a {
+        text-decoration: none;
+        padding-right: 12px;
+        vertical-align: middle;
+        display: inline-block;
+    }
+
+    img {
+        border: 0;
+    }
+}
+
 
 .overview {
     text-align: center;
-
+    position: relative;
+    .share-btns {
+        position: absolute;
+        top: 17px;
+        right: 100px;
+    }
     .ceil {
         padding-bottom: 5px;
     }
@@ -314,6 +360,10 @@ img {
         padding-top: 78px;
         margin-bottom: -6px;
     }
+
+    .desc {
+        padding-left: 6px;
+    }
 }
 
 .our-team {
@@ -358,6 +408,18 @@ img {
             width: 80%;
         }
 
+        .overview {
+            .vote-btn {
+                letter-spacing: 2px;
+                padding: 0px 20px;
+                margin: 0 auto;
+            }
+
+            .share-btns {
+                display: none;
+            }
+        }
+
         .section {
 
             .break {
@@ -377,20 +439,19 @@ img {
 
             }
 
+            &.overview .content {
+                padding-top: 0;
+            }
+
             .partner {
                 padding: 0;
                 float: left;
             }
 
-            .vote-btn {
-                letter-spacing: 2px;
-                padding: 0px 20px;
-                margin: 0 auto;
-            }
-
-            point-1, .point-2 {
+            .point-1, .point-2 {
                 display: none;
             }
+
         }
 
     }
