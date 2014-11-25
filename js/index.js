@@ -28,6 +28,14 @@
 }(this));
 
 (function(root, $) {
+    var $controller = $('#controller');
+    $(window).scroll(function() {
+        var scrollTop = $(document).scrollTop();
+        $controller[ scrollTop > 800 ? 'show' : 'hide']();
+    });
+}(this, jQuery));
+
+(function(root, $) {
 
     var lang = navigator.language || navigator.userLanguage,
         isChina = lang === 'zh-CN';

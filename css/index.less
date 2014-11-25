@@ -100,7 +100,7 @@ body {
 }
 
 /* Layout Common */
-.container, .section {
+.section {
     width: 100%;
 }
 
@@ -134,6 +134,15 @@ img {
     max-width: 100%;
 }
 
+.controller {
+    top: 0;
+    width: 100%;
+    min-height: 40px;
+    position: fixed;
+
+    z-index: 20;
+    display: none;
+}
 
 
 /* Layout Width */
@@ -227,6 +236,14 @@ img {
     }
 }
 
+
+.controller {
+    .share-btns {
+        position: absolute;;
+        top: 17px;
+        right: 100px;
+    }
+}
 
 .overview {
     text-align: center;
