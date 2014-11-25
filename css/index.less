@@ -198,6 +198,9 @@ img {
     text-decoration: none;
     font-weight: 700;
     .border-radius(5px);
+    &:hover, &:focus {
+        background: #c2e30d;
+    }
 }
 
 .share-btns {
@@ -478,7 +481,7 @@ img {
 
 .zh-CN {
     font-size: 15px;
-    line-height: 24px;
+    line-height: 26px;
 
     .controller {
         .vote-btn {
@@ -501,8 +504,14 @@ img {
         }
     }
 
-    .scene .point-2 {
-        line-height: 42px;
+    .scene {
+        .point-1, .point-2 {
+            font-size: 12px;
+        }
+
+        .point-2 {
+            line-height: 42px;
+        }
     }
 }
 
