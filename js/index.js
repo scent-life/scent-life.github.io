@@ -23,7 +23,8 @@
         "BENEFIT_6": "<strong>香味数据库 - </strong> 当你不知道怎么混或针对场合、对象要混什么时，提供你参考的量",
         "BENEFIT_7": "<strong>多变化 - </strong> 你可以随时改变你要的味道",
         "OUR_TEAM": "多元的团队组合",
-        "PARTNERS": "合作夥伴"
+        "PARTNERS": "合作夥伴",
+        "CONTACT_US": "联络我们"
     };
 
 }(this));

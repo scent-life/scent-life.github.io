@@ -30,7 +30,7 @@ body {
 
 body {
     font-family: "HelveticaNeue-Regular", "Helvetica Neue Regular", "Helvetica Neue", "Helvetica", "Arial", "Lucida Grande", "sans-serif";
-    font-size: 11px;
+    font-size: 12px;
     line-height: 20px;
     font-style: normal;
     font-weight: 300;
@@ -48,12 +48,7 @@ h1, h2, h3, h4, h5, h6 {
 strong {
     font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue", "Helvetica"
     , "Arial", "Lucida Grande", "sans-serif";
-    font-size: 12px;
     font-weight: 700; /* bold */
-}
-
-footer {
-    font-size: 12px;
 }
 
 /* Background & Color */
@@ -198,11 +193,11 @@ img {
     padding: 0px 40px;
     line-height: 71px;
     letter-spacing: 3px;
-    background: #8dc44a;
+    background: #b6d40f;
     display: inline-block;
     text-decoration: none;
     font-weight: 700;
-    .border-radius(7px);
+    .border-radius(5px);
 }
 
 .share-btns {
@@ -256,22 +251,22 @@ img {
         z-index: 11;
         .opacity(1);
         padding: 11px 0 11px 134px;
-
-
     }
 
+    .logo, .vote-btn, .share-btns {
+        vertical-align: middle;
+    }
     .vote-btn {
-        vertical-align: top;
         font-size: 13px;
-        line-height: 35px;
+        line-height: 37px;
         padding: 0 17px;
         margin-left: 17px;
     }
 
     .share-btns {
         position: absolute;;
-        top: 17px;
-        right: 100px;
+        top: 14px;
+        right: 119px;
     }
 }
 
@@ -281,7 +276,7 @@ img {
     .share-btns {
         position: absolute;
         top: 17px;
-        right: 100px;
+        right: 52px;
     }
     .ceil {
         padding-bottom: 5px;
@@ -397,6 +392,7 @@ img {
 }
 
 .benefits {
+    overflow: hidden;
     .content {
         padding-top: 75px;
         padding-bottom: 0;
@@ -436,8 +432,8 @@ img {
     text-align: center;
 
     .content {
-        padding-top: 40px;
-        padding-bottom: 20px;
+        padding-top: 59px;
+        padding-bottom: 24px;
     }
 
     .title {
@@ -445,29 +441,50 @@ img {
     }
 
     .partners {
-        padding-bottom: 60px;
+        padding-bottom: 59px;
         text-align: center;
-    }
 
-    .partner {
-        display: inline-block;
-        vertical-align: middle;
-    }
+        a {
+            display: inline-block;
+            vertical-align: middle;
 
-    a {
-        padding: 0 29px;
-        text-decoration: none;
-        img {
-            border: 0;
+            padding: 0 29px;
+            text-decoration: none;
+            img {
+                border: 0;
+            }
         }
     }
-}
 
-.footer {
-    text-align: center;
+    .footer {
+        a {
+            text-align: center;
+            text-decoration: none;
+            color: #dced1e;
+            font-weight: 700;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        .opacity {
+            .opacity(0.9);
+        }
+        .divider {
+            padding: 0 4px;
+        }
+    }
+
 }
 
 .zh-CN {
+    font-size: 14px;
+
+    .controller {
+        .vote-btn {
+            font-size: 18px;
+        }
+    }
+
     .overview {
         .logo {
             padding-bottom: 25px;
@@ -475,6 +492,11 @@ img {
 
         .desc {
             padding-bottom: 25px;
+        }
+
+        .vote-btn {
+            font-size: 28px;
+            padding: 0 98px;
         }
     }
 
@@ -485,19 +507,29 @@ img {
 
 
 /* Currently we have no mobile layout, just add some simple css here. */
+
+@media only screen and (min-width: 1024px) {
+    .hide-on-desktop {
+        display: none !important;
+    }
+}
+
 @media only screen and (max-width: 1023px) {
+    .hide-on-mobile {
+        display: none !important;
+    }
     body {
         padding-bottom: 88px;
         .section {
             .break {
-                display: inline;
+                display: none;
             }
 
             .content {
                 width: auto;
-                padding: 15px;
+                padding: 20px;
 
-                .row, .left, .right, .desc, .video {
+                .row, .left, .right, .desc, .video, .title {
                     float: none;
                     display: block;
                     padding: 0 0 15px 0;
@@ -527,6 +559,7 @@ img {
                 padding: 0;
                 width: auto;
             }
+
             .vote-btn {
                 display: block;
                 margin: 0;
@@ -551,6 +584,23 @@ img {
         }
 
         .overview {
+
+            .mobile-ceil {
+                text-align: right;
+                position: relative;
+
+                .logo {
+                    position: absolute;
+                    top: -6px;
+                    left: 0;
+                    width: 50px;
+                }
+
+                .hand {
+                    width: 76%;
+                }
+            }
+
             .vote-btn {
                 letter-spacing: normal;
                 padding: 0px 20px;
@@ -564,6 +614,12 @@ img {
 
             .content {
                 padding-top: 0;
+            }
+        }
+
+        .benefits {
+            .content, .content .icon {
+                padding-bottom: 0;
             }
         }
 
@@ -586,7 +642,8 @@ img {
             }
 
             .content .footer {
-                padding-top: 15px;
+                padding-top: 16px;
+                padding-bottom: 0;
             }
         }
 
@@ -595,10 +652,16 @@ img {
     .zh-CN {
         .controller {
             .vote-btn {
-                font-size: 20px;
+                font-size: 28px;
             }
         }
 
+        .overview {
+            .vote-btn {
+                font-size: 28px;
+                padding: 0 20px;
+            }
+        }
     }
 }
 
