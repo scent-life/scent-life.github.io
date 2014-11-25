@@ -28,29 +28,34 @@
 }(this));
 
 (function(root, $) {
+    /* init scroll */
     var $controller = $('#controller'),
-        topBarAppear = function(){
-            var scrollTop = $(document).scrollTop();
+        $document = $(document);
 
-            // convert js hide/show to class for animated
-            // $controller[ scrollTop > 800 ? 'show' : 'hide']();
-            if(scrollTop > 800) {
-                $controller.addClass('show');
-            }else{
-                $controller.removeClass('show');
-            }
-        };
+    function topBarAppear() {
+        var scrollTop = $document.scrollTop();
 
-    $(window).scroll(function() {
-        topBarAppear();
-    });
+        // convert js hide/show to class for animated
+        // $controller[ scrollTop > 800 ? 'show' : 'hide']();
+        if (scrollTop > 800) {
+            $controller.addClass('show');
+        } else {
+            $controller.removeClass('show');
+        }
+    };
 
-    // for browser cache position
+    /* for browser cache position */
+    $(window).scroll(topBarAppear);
     topBarAppear();
+
+    /* */
+    var shareBtnHtml = $('#main-share-btns').html();
+    $('.clone-share-btns').each(function() {
+        $(this).html(shareBtnHtml);
+    });
 }(this, jQuery));
 
 (function(root, $) {
-
     var lang = navigator.language || navigator.userLanguage,
         isChina = lang === 'zh-CN';
 
@@ -80,7 +85,7 @@
     function setupChinaVideo() {
         var $video = $('#video');
 
-        $video.children('iframe').attr('src',  $video.data('video-china'));
+        $video.children('iframe').attr('src', $video.data('video-china'));
     }
 
     function initChina() {
