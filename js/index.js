@@ -40,6 +40,11 @@
     var lang = navigator.language || navigator.userLanguage,
         isChina = lang === 'zh-CN';
 
+    if (location.hash === '#test') {
+        isChina = false;
+        return;
+    }
+
     function renderChinaText() {
         var text = root.i18n['zh-CN'] || {};
 
