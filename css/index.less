@@ -85,10 +85,6 @@ body {
     background: #2eabe1;
 }
 
-.footer {
-    color: #b0b0b0;
-}
-
 /* Layout Common */
 .section {
     width: 100%;
@@ -436,14 +432,30 @@ img {
     }
 }
 
-.partner {
+.our-partner {
     text-align: center;
+
     .content {
-        padding: 24px 0;
+        padding-top: 40px;
+        padding-bottom: 20px;
+    }
+
+    .title {
+        padding-bottom: 40px;
+    }
+
+    .partners {
+        padding-bottom: 60px;
+        text-align: center;
     }
 
     .partner {
-        padding: 0 20px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    a {
+        padding: 0 29px;
         text-decoration: none;
         img {
             border: 0;
@@ -453,10 +465,6 @@ img {
 
 .footer {
     text-align: center;
-    .content {
-        padding-top: 12px;
-        padding-bottom: 82px;
-    }
 }
 
 .zh-CN {
@@ -479,49 +487,7 @@ img {
 /* Currently we have no mobile layout, just add some simple css here. */
 @media only screen and (max-width: 1023px) {
     body {
-        .controller {
-            border-bottom: 0;
-            border-top: 1px solid #dcdcdc;
-            top: auto;
-            bottom: 0;
-
-            .content {
-                margin: 8px 17px;
-                padding: 0;
-                width: auto;
-            }
-            .vote-btn {
-                display: block;
-                margin: 0;
-                text-align: center;
-                font-size: 18px;
-            }
-
-            .logo {
-                display: none;
-            }
-
-            .share-btns {
-                display: none;
-            }
-        }
-
-        .hr {
-            width: 80%;
-        }
-
-        .overview {
-            .vote-btn {
-                letter-spacing: normal;
-                padding: 0px 20px;
-                margin: 0 auto;
-            }
-
-            .share-btns {
-                display: none;
-            }
-        }
-
+        padding-bottom: 88px;
         .section {
             .break {
                 display: inline;
@@ -543,14 +509,6 @@ img {
                 text-align: center;
             }
 
-            &.overview .content {
-                padding-top: 0;
-            }
-
-            .partner {
-                padding: 0;
-                // float: left;
-            }
 
             .point-1, .point-2 {
                 display: none;
@@ -558,11 +516,84 @@ img {
 
         }
 
+        .controller {
+            border-bottom: 0;
+            border-top: 1px solid #dcdcdc;
+            top: auto;
+            bottom: 0;
+
+            .content {
+                margin: 8px 15px;
+                padding: 0;
+                width: auto;
+            }
+            .vote-btn {
+                display: block;
+                margin: 0;
+                letter-spacing: normal;
+                text-align: center;
+                font-size: 24px;
+                line-height: 71px;
+                padding: 0px 20px;
+            }
+
+            .logo {
+                display: none;
+            }
+
+            .share-btns {
+                display: none;
+            }
+        }
+
+        .hr {
+            width: 80%;
+        }
+
+        .overview {
+            .vote-btn {
+                letter-spacing: normal;
+                padding: 0px 20px;
+                margin: 0 auto;
+                display: block;
+            }
+
+            .share-btns {
+                display: none;
+            }
+
+            .content {
+                padding-top: 0;
+            }
+        }
+
+        .our-partner {
+            .small {
+                width: 37px;
+            }
+
+            .middle {
+                width: 75px;
+            }
+            .large {
+                width: 100px;
+            }
+            .partner {
+                padding: 0 10px;
+            }
+            img {
+                width: 100%;
+            }
+
+            .content .footer {
+                padding-top: 15px;
+            }
+        }
+
     }
 
     .zh-CN {
         .controller {
-
             .vote-btn {
                 font-size: 20px;
             }
