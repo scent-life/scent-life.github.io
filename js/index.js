@@ -28,11 +28,25 @@
 }(this));
 
 (function(root, $) {
-    var $controller = $('#controller');
+    var $controller = $('#controller'),
+        topBarAppear = function(){
+            var scrollTop = $(document).scrollTop();
+
+            // convert js hide/show to class for animated
+            // $controller[ scrollTop > 800 ? 'show' : 'hide']();
+            if(scrollTop > 800) {
+                $controller.addClass('show');
+            }else{
+                $controller.removeClass('show');
+            }
+        };
+
     $(window).scroll(function() {
-        var scrollTop = $(document).scrollTop();
-        $controller[ scrollTop > 800 ? 'show' : 'hide']();
+        topBarAppear();
     });
+
+    // for browser cache position
+    topBarAppear();
 }(this, jQuery));
 
 (function(root, $) {
