@@ -45,6 +45,10 @@
         return;
     }
 
+    function addChinaClass() {
+        $('body').addClass('zh-CN');
+    }
+
     function renderChinaText() {
         var text = root.i18n['zh-CN'] || {};
 
@@ -66,6 +70,7 @@
     }
 
     function initChina() {
+        addChinaClass();
         renderChinaText();
         setupChinaVideo();
     }

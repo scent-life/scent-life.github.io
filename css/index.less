@@ -56,16 +56,6 @@ footer {
     font-size: 12px;
 }
 
-html[lang=zh-CN] {
-    body {
-        font-family: "PingHei","Helvetica Neue","Helvetica","Arial","Verdana","sans-serif";
-    }
-
-    h1, h2, h3, h4, h5, h6, strong, .strong {
-        font-family: "PingHei 200","PingHei","Helvetica Neue","Helvetica","Arial","Verdana","sans-serif";
-    }
-}
-
 /* Background & Color */
 
 body {
@@ -303,7 +293,8 @@ img {
     }
     .point-1, .point-2 {
         position: absolute;
-        width: 220px;
+        line-height: 42px;
+        width: 240px;
         .ico {
             .border-radius(20px);
             border: 1px solid #000;
@@ -321,10 +312,10 @@ img {
     .point-1 {
         top: 143px;
         left: 340px;
-        line-height: 42px;
     }
 
     .point-2 {
+        line-height: 21px;
         top: 268px;
         left: 300px;
     }
@@ -369,7 +360,7 @@ img {
     }
 
     .row {
-        padding: 0 @left-gap;
+        padding: 0 100px 0 @left-gap;
     }
 
     .icon {
@@ -417,6 +408,23 @@ img {
         padding-bottom: 82px;
     }
 }
+
+.zh-CN {
+    .overview {
+        .logo {
+            padding-bottom: 25px;
+        }
+
+        .desc {
+            padding-bottom: 25px;
+        }
+    }
+
+    .scene .point-2 {
+        line-height: 42px;
+    }
+}
+
 
 /* Currently we have no mobile layout, just add some simple css here. */
 @media only screen and (max-width: 1023px) {
