@@ -179,40 +179,16 @@ img {
     padding: 0px 40px;
     line-height: 71px;
     letter-spacing: 3px;
-    background: #02cb54;
+    background: #8dc44a;
     display: inline-block;
     text-decoration: none;
+    font-weight: 700;
     .border-radius(7px);
-}
-
-.box {
-    /*非IE的主流浏览器识别的垂直居中的方法*/
-    display: table-cell;
-    vertical-align:middle;
-
-    /*设置水平居中*/
-    text-align:center;
-
-    /* 针对IE的Hack */
-    *display: block;
-    *font-size: 175px;/*约为高度的0.873，200*0.873 约为175*/
-    *font-family:Arial;/*防止非utf-8引起的hack失效问题，如gbk编码*/
-
-    width:200px;
-    height:200px;
-    border: 1px solid #eee;
-}
-.box img {
-    /*设置图片垂直居中*/
-    vertical-align:middle;
 }
 
 .share-btns {
     display: table-cell;
     vertical-align:middle;
-    /* 针对IE的Hack */
-    *display: block;
-    *font-size: 32px;
 
     a {
         text-decoration: none;
@@ -228,8 +204,36 @@ img {
 
 
 .controller {
-    padding-top: 10px;
-    padding-left: 133px;
+    border-bottom: 1px solid #dcdcdc;
+
+    .opacity, content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .opacity {
+        z-index: 10;
+        background: #fff;
+        .opacity(0.6);
+    }
+
+    .content {
+        z-index: 11;
+        .opacity(1);
+        padding: 11px 0 11px 134px;
+    }
+
+    .vote-btn {
+        vertical-align: top;
+        font-size: 13px;
+        line-height: 35px;
+        padding: 0 17px;
+        margin-left: 17px;
+    }
+
     .share-btns {
         position: absolute;;
         top: 17px;
@@ -285,14 +289,17 @@ img {
 
 .scene {
     text-align: left;
+
     .left {
         padding-top: 166px;
         width: 242px;
     }
+
     .right {
         position: relative;
         padding: 62px 0 0 84px;
     }
+
     .point-1, .point-2 {
         position: absolute;
         line-height: 42px;
@@ -432,7 +439,30 @@ img {
 @media only screen and (max-width: 1023px) {
     body {
         .controller {
-            display: none !important;
+            border-bottom: 0;
+            border-top: 1px solid #dcdcdc;
+            top: auto;
+            bottom: 0;
+
+            .content {
+                margin: 8px 17px;
+                padding: 0;
+                width: auto;
+            }
+            .vote-btn {
+                display: block;
+                margin: 0;
+                text-align: center;
+                font-size: 18px;
+            }
+
+            .logo {
+                display: none;
+            }
+
+            .share-btns {
+                display: none;
+            }
         }
 
         .hr {
@@ -441,7 +471,7 @@ img {
 
         .overview {
             .vote-btn {
-                letter-spacing: 2px;
+                letter-spacing: normal;
                 padding: 0px 20px;
                 margin: 0 auto;
             }
@@ -452,7 +482,6 @@ img {
         }
 
         .section {
-
             .break {
                 display: inline;
             }
@@ -467,7 +496,6 @@ img {
                     padding: 0 0 15px 0;
                     width: auto;
                 }
-
             }
 
             &.overview .content {
@@ -483,6 +511,16 @@ img {
                 display: none;
             }
 
+        }
+
+    }
+
+    .zh-CN {
+        .controller {
+
+            .vote-btn {
+                font-size: 20px;
+            }
         }
 
     }
