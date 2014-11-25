@@ -518,13 +518,15 @@ img {
 
 /* Currently we have no mobile layout, just add some simple css here. */
 
-@media only screen and (min-width: 1024px) {
-    .hide-on-desktop {
-        display: none !important;
-    }
+.hide-on-desktop {
+    display: none !important;
 }
 
 @media only screen and (max-width: 1023px) {
+    .hide-on-desktop {
+        display: block !important;
+    }
+
     .hide-on-mobile {
         display: none !important;
     }
