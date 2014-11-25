@@ -17,5 +17,8 @@
     "gulp-livereload": "*"
   },
   "author": "Scent Team",
-  "homepage": "http://scent.life"
+  "homepage": "http://scent.life",
+  "dependencies": {
+    "browser-sync": "^1.7.1"
+  }
 }
