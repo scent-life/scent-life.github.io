@@ -24,7 +24,8 @@
         "BENEFIT_7": "<strong>多变化 - </strong> 你可以随时改变你要的味道",
         "OUR_TEAM": "多元的团队组合",
         "PARTNERS": "合作夥伴",
-        "CONTACT_US": "联络我们"
+        "CONTACT_US": "联络我们",
+        "SHARE_WECHAT": "使用WeChat扫描二维码"
     };
 
 }(this));
@@ -55,6 +56,24 @@
     $('.clone-share-btns').each(function() {
         $(this).html(shareBtnHtml);
     });
+
+    function hideOverlay() {
+        $('.overlay').removeClass('show');
+    }
+
+    $('.share-wechat').click(function(ev) {
+        ev.preventDefault();
+        ev.stopPropagation();
+        var $overlay = $(this).children('.overlay');
+        if ($overlay.hasClass('show')) {
+            $overlay.removeClass('show');
+            $('body').off('click', hideOverlay);
+        } else {
+            $overlay.addClass('show');
+            $('body').on('click', hideOverlay);
+        }
+    });
+
 }(this, jQuery));
 
 (function(root, $) {

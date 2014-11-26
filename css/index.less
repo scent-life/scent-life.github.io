@@ -19,6 +19,14 @@ ul, li {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
+img {
+    border: 0;
+}
+
 /** Font Related */
 body {
     text-align: left;
@@ -125,6 +133,8 @@ img {
     display: none;
 }
 
+/*********/
+
 
 /* Layout Width */
 @left-gap: 150px;
@@ -165,12 +175,47 @@ img {
 
 /* share btns */
 .share-btns {
-    .share-facebook, .share-twitter, .share-google, .share-pinterest {
+    .share-btn {
         display: inline-block;
     }
 
     .share-weibo, .share-qq, .share-wechat {
         display: none;
+    }
+
+    .share-wechat {
+        cursor: pointer;
+        position: relative;
+        .overlay {
+            .border-radius(5px);
+            border: 1px solid #dbdbdb;
+            position: absolute;
+            left: -60px;
+            background: #fff;
+            width: 130px;
+            padding: 15px;
+            border: 1px solid #ccc;
+
+            .transition(all 0.3s ease);
+            top: 40px;
+            .opacity(0);
+            margin-top: -100px;
+            display: none;
+            .title {
+                font-size: 12px;
+                font-weight: normal;
+                line-height: normal;
+                padding: 0;
+                margin: 0;
+            }
+        }
+
+        .show {
+            display: block;
+            .transition(all 0.3s ease);
+            .opacity(1);
+            margin-top: 0;
+        }
     }
 }
 
@@ -207,11 +252,10 @@ img {
     display: table-cell;
     vertical-align:middle;
 
-    a {
+    .share-btn {
         text-decoration: none;
         padding-right: 12px;
         vertical-align: middle;
-        display: inline-block;
     }
 
     img {
@@ -229,11 +273,13 @@ img {
     .transition(all 0.3s ease);
     .opacity(0);
     margin-top: -100px;
+    display: none;
 
     &.show {
         .transition(all 0.3s ease);
         .opacity(1);
         margin-top: 0px;
+        display: block;
     }
 
     .opacity, content {
@@ -457,17 +503,12 @@ img {
             vertical-align: middle;
 
             padding: 0 29px;
-            text-decoration: none;
-            img {
-                border: 0;
-            }
         }
     }
 
     .footer {
         a {
             text-align: center;
-            text-decoration: none;
             color: #dced1e;
             font-weight: 700;
             &:hover {
