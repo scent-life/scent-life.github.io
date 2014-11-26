@@ -198,8 +198,8 @@ img {
             .transition(all 0.3s ease);
             top: 40px;
             .opacity(0);
-            margin-top: -100px;
-            display: none;
+            margin-top: -200px;
+
             .title {
                 font-size: 12px;
                 font-weight: normal;
@@ -207,13 +207,13 @@ img {
                 padding: 0;
                 margin: 0;
             }
-        }
 
-        .show {
-            display: block;
-            .transition(all 0.3s ease);
-            .opacity(1);
-            margin-top: 0;
+            &.show {
+                display: block;
+                .transition(all 0.3s ease);
+                .opacity(1);
+                margin-top: 0;
+            }
         }
     }
 }
